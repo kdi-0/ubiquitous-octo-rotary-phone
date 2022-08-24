@@ -4,7 +4,7 @@ from requests import Request, Session
 
 
 class FTXClient:
-    URL = 'https://ftx.us/api'
+    URL = 'https://ftx.us/api/'
 
     def __init__(self, api_key=None, secret_key=None) -> None:
         # Session objects persist certain params + cookies accross requests
