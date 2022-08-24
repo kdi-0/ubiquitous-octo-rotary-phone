@@ -1,5 +1,6 @@
 import time
 import hmac
+from typing import Optional, Dict, Any
 from requests import Request, Session
 
 
@@ -31,3 +32,9 @@ class FTXClient:
         request.headers[f'FTXUS-KEY'] = self.api_key
         request.headers[f'FTXUS-SIGN'] = signature
         request.headers[f'FTXUS-TS'] = str(ts)
+
+    def _get(self, path: str, params: Optional[Dict[str, Any]] = None):
+        return self._request('GET', path, params=params)
+
+    def _orderbook(self, market_name: str = 'BTC/USD', depth: int = 20):
+        return self._get(f"markets/{market_name}/orderbook", {"depth": depth})

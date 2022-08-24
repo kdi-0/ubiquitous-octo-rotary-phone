@@ -8,4 +8,5 @@ if __name__ == "__main__":
     r = FTX._request('GET', 'account')
     print(r.status_code)
     pp = pprint.PrettyPrinter()
-    pp.pprint(r.json())
+    # pp.pprint(r.json())
+    pp.pprint(FTX._orderbook().json())
