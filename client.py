@@ -11,7 +11,7 @@ class FTXClient:
         # Improves performance
         self._session = Session()
         self.api_key = api_key
-        self.secret_key = None
+        self.secret_key = secret_key
 
     def _request(self, method: str, path: str, **kwargs):
         request = Request(method, self.URL+path, **kwargs)
