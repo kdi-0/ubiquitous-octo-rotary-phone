@@ -4,7 +4,6 @@ import hmac
 from collections import defaultdict
 import requests
 # config = {"USER": "foo", "EMAIL": "foo@example.org"}
-config = dotenv_values(".env")
 
 
 class FTXClient:
