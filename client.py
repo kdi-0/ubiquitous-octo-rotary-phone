@@ -2,9 +2,10 @@ import time
 import hmac
 from typing import Optional, Dict, Any
 from requests import Request, Session
+from websocket import WebSocketApp
 
 
-class FTXClient:
+class FTXClientHTTP:
     URL = 'https://ftx.us/api/'
 
     def __init__(self, api_key=None, secret_key=None) -> None:
@@ -38,3 +39,18 @@ class FTXClient:
 
     def _orderbook(self, market_name: str = 'BTC/USD', depth: int = 20):
         return self._get(f"markets/{market_name}/orderbook", {"depth": depth})
+
+    #def _order(self, side:str, qty:str, type:str, market:str)
+
+
+class FTXClientWS:
+    URI: str = 'wss://ftx.us/ws/'
+
+    def __init__(self) -> None:
+        pass
+
+    def send(self, message: str):
+        pass
+
+    def _connect(self, ):
+        pass
