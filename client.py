@@ -43,6 +43,8 @@ class FTXClientHTTP:
     #def _order(self, side:str, qty:str, type:str, market:str)
 
 
+class RocketSocket:
+    pass
 class FTXClientWS:
     URI: str = 'wss://ftx.us/ws/'
 
@@ -52,5 +54,8 @@ class FTXClientWS:
     def send(self, message: str):
         pass
 
-    def _connect(self, ):
+    def _connect(self,):
+        pass
+
+    def _subscribe(self):
         pass
